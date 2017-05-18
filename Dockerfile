@@ -2,7 +2,7 @@ FROM golang:1.8-alpine
 
 MAINTAINER André M. Ribeiro dos Santos "andremrsantos@gmail.com"
 
-RUN apk update && apk --no-cache add ca-certificates git emacs
+RUN apk update && apk --no-cache add ca-certificates git diffutils emacs
 
 COPY emacs.d /root/.emacs.d
 RUN mkdir -p /root/.emacs.d/private/cache/ && \
