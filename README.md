@@ -47,3 +47,7 @@ Alternatively you can use a long-lived container, see code bellow:
     ## on other windon install required packages
     docker exec dkmacs go get -u github.com/nsf/gocode
     docker exec dkmacs go get -u golang.org/x/tools/cmd/goimports
+
+## Credits
+
+The emacs configurations were addapted from [rakanalh/emacs-bootstra](https://github.com/rakanalh/emacs-bootstrap).
