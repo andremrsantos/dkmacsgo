@@ -8,7 +8,6 @@ RUN apk update && \
     diffutils \
     emacs
 
-ENV HOME /home/user
 ENV TERM xterm-256color
 ENV GOPATH /godev
 ENV PATH /godev/bin:$PATH
