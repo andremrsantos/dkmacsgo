@@ -14,6 +14,9 @@
 
 (require 'lang-go)
 
+;; deactive backup-file
+(setq make-backup-files nil)
+
 ;; compile error
 (setq byte-compile--use-old-handlers nil)
 
