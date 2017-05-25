@@ -8,14 +8,17 @@ RUN apk update && \
     diffutils \
     emacs
 
-ENV TERM xterm-256color
+ENV HOME /home/user
 ENV GOPATH /godev
 ENV PATH /godev/bin:$PATH
+ENV TERM xterm-256color
+
+RUN adduser -D -u 1000 user && mkdir -p $HOME && chown -R user:user $HOME
 
 COPY emacs.d $HOME/.emacs.d/
 RUN mkdir -p $HOME/.emacs.d/private/cache && \
-    emacs --batch --load $HOME/.emacs.d/init.el
+    emacs --batch --load $HOME/.emacs.d/init.el && \
+    chown -R user:user $HOME/.emacs.d/
 
-WORKDIR $HOME/workspace
-
+USER user
 CMD ["emacs", "./"]
